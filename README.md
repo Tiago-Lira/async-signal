@@ -44,6 +44,8 @@ class Example(object):
 
 ### Connecting a signal
 
+The `signal_listener` must use the `@asyncio.coroutine` decorator
+
 ```python
 
 import asyncio

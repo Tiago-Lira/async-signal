@@ -4,6 +4,15 @@
 This package provide a classs to connect signals (using asyncio) to your functions.  
 Works on Python3.4+
 
+### Install
+
+Install via pip:
+
+```bash
+$ pip install async-signal
+
+```
+
 
 ### Creating a signal
 

@@ -15,6 +15,7 @@ setup(
     author='Tiago Lira',
     author_email='tiagoliradsantos@gmail.com',
     url='https://github.com/Tiago-Lira/async-signal',
+    download_url='https://github.com/Tiago-Lira/async-signal/tarball/0.1',
     keywords=['asyncio', 'signals', 'python3', 'dispatch'],
     install_requires=[
         'asyncio>=3.4.3',

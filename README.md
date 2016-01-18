@@ -53,7 +53,8 @@ import asyncio
 
 @asyncio.coroutine
 def signal_listener(sender, **kwargs):
-    print kwargs['message']  # will print "Hey, it works"
+    print(kwargs['message'])
+    # >> "Hey, it works"
 
 
 on_success.connect(sender=Example, receiver=signal_listener)

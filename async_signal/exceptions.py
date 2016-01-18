@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+
+
+
+__all__ = ['SignalError', 'ArgumentError']
 
 
 class SignalError(Exception):

@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
 
 import asyncio
+
 from async_signal.exceptions import ArgumentError
 from async_signal.utils import get_sender_key
 
@@ -34,3 +34,7 @@ class Signal(object):
         receivers = self.receivers.get(sender_key, [])
         tasks = [receiver(sender=sender, **kwargs) for receiver in receivers]
         return [asyncio.async(task) for task in tasks]
+
+    def has_receivers(self, sender):
+        sender_key = get_sender_key(sender)
+        return bool(self.receivers.get(sender_key, None))

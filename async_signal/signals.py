@@ -1,3 +1,12 @@
+"""Signals with asyncio module
+
+A signals module to use with asyncio coroutines.
+To use this package, use the class Signal like this:
+
+See the documentation at README.md:
+https://github.com/Tiago-Lira/async-signal
+
+"""
 
 import asyncio
 
@@ -66,7 +75,7 @@ class Signal(object):
 
         Keyword arguments:
 
-        sender      -- the sender that will dispatch the signal
+        sender -- the sender that will dispatch the signal
 
         """
         return bool(self.__get_receivers(sender))

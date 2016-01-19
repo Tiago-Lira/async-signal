@@ -1,6 +1,7 @@
 
 import pytest
 import asyncio
+
 from async_signal.signals import Signal
 from async_signal.exceptions import ArgumentError
 

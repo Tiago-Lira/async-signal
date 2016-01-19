@@ -1,6 +1,7 @@
 
 import pytest
 import asyncio
+
 from async_signal.signals import Signal
 from async_signal.exceptions import ArgumentError
 from async_signal.utils import get_sender_key

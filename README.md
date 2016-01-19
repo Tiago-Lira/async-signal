@@ -1,6 +1,8 @@
 
 # async-signal
+[![PyPI version](https://badge.fury.io/py/async-signal.svg)](https://badge.fury.io/py/async-signal)
 [![Build Status](https://travis-ci.org/Tiago-Lira/async-signal.svg?branch=master)](https://travis-ci.org/Tiago-Lira/async-signal)
+[![Coverage Status](https://coveralls.io/repos/github/Tiago-Lira/async-signal/badge.svg?branch=master)](https://coveralls.io/github/Tiago-Lira/async-signal?branch=master)
 
 This package provide a classs to connect signals (using asyncio) to your functions.  
 Works on Python3.4+

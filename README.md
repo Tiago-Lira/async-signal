@@ -14,37 +14,44 @@ $ pip install async-signal
 ```
 
 
-### Creating a signal
+### Getting started
+
+This package provides a class to create signals with asyncio. The main concepts to understand how to use are:
+* Sender   - the class that will dispatch the signal
+* Receiver - the asyncio coroutine that will receive this signal
+
+For this work, you need to connect a "Receiver" to a "Sender". see the example below:
+
+#### Creating a "was_multiplied" signal
 
 ```python
-# -*- coding: utf-8 -*-
 
 from async_signal.signals import Signal
 
 # The receiver function will receive these arguments
-on_success = Signal(arguments=['message'])
+was_multiplied = Signal(arguments=['result'])
 
 ```
 
 
-### Dispatching Signals
+#### Creating the Sender to Dispatch the Signal
+
+The sender must be a function, class or some object that have the attributes ```__module__``` and ```__name__```
 
 ```python
 
 
-class Example(object):
-
-    def do_stuff(*args, **kwargs):
-        # ... do stuff ...
-        # all receivers connected to this signal will receive this
-        on_success.dispatch(sender=self.__class__, message='Hey, it works')
+def multiply_by_2(self, number):
+    result = number * 2
+    # This will emit to all receivers this result
+    was_multiplied.dispatch(sender=self, result=result)
 
 ```
 
 
-### Connecting a signal
+#### Connecting a receiver to this signal
 
-The `signal_listener` must use the `@asyncio.coroutine` decorator
+The `receiver` must use the `@asyncio.coroutine` decorator
 
 ```python
 
@@ -52,12 +59,14 @@ import asyncio
 
 
 @asyncio.coroutine
-def signal_listener(sender, **kwargs):
-    print(kwargs['message'])
-    # >> "Hey, it works"
+def listen_multiply(sender, result):
+    # Every time that the function multiply_by_2 is called
+    # This signal will receive the result
+    # if multiply_by_2(10) is called, this function will print:
+    # >> 20
+    print(result)
 
 
-on_success.connect(sender=Example, receiver=signal_listener)
+on_success.connect(sender=multiply_by_2, receiver=listen_multiply)
 
 ```
-

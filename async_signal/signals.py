@@ -10,6 +10,7 @@ __all__ = ['Signal']
 
 ERRORS = {
     'argument': 'argument "{}" is not allowed',
+    'coroutine_required': '"{}" must be an asyncio coroutine function!',
 }
 
 
@@ -20,6 +21,10 @@ class Signal(object):
         self.receivers = {}
 
     def connect(self, sender, receiver):
+
+        if not asyncio.iscoroutinefunction(receiver):
+            raise ArgumentError(ERRORS['coroutine_required'].format(receiver))
+
         sender_key = get_sender_key(sender)
         receivers = self.receivers.get(sender_key, [])
         receivers.append(receiver)

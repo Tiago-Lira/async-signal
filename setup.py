@@ -11,14 +11,21 @@ setup(
         'async_signal': [],
     },
     version='0.1',
-    description='Signals to use with asyncio',
+    description='Create signals to use with asyncio coroutines',
     author='Tiago Lira',
     author_email='tiagoliradsantos@gmail.com',
     url='https://github.com/Tiago-Lira/async-signal',
-    download_url='https://github.com/Tiago-Lira/async-signal/tarball/0.1',
-    keywords=['asyncio', 'signals', 'python3', 'dispatch'],
+    download_url='https://github.com/Tiago-Lira/async-signal/tarball/0.1.1',
+    keywords=[
+        'asyncio',
+        'signals',
+        'python3',
+        'dispatch',
+        'async',
+        'coroutines'
+    ],
     install_requires=[
-        'asyncio>=3.4.3',
+        'asyncio==3.4.3',
     ],
     zip_safe=False,
 )

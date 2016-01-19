@@ -1,5 +1,6 @@
 
 # async-signal
+[![Build Status](https://travis-ci.org/Tiago-Lira/async-signal.svg?branch=master)](https://travis-ci.org/Tiago-Lira/async-signal)
 
 This package provide a classs to connect signals (using asyncio) to your functions.  
 Works on Python3.4+

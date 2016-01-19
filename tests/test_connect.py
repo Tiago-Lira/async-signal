@@ -11,6 +11,10 @@ class Sender:
     pass
 
 
+def sender_function():
+    pass
+
+
 def not_coroutine_receiver():
     pass
 
@@ -30,4 +34,11 @@ def test_signal_connect_when_is_coroutine():
     test_signal = Signal()
     test_signal.connect(sender=Sender, receiver=coroutine_receiver)
     key = get_sender_key(Sender)
+    assert coroutine_receiver in test_signal.receivers[key]
+
+
+def test_when_signal_connect_sender_is_a_function():
+    test_signal = Signal()
+    test_signal.connect(sender=sender_function, receiver=coroutine_receiver)
+    key = get_sender_key(sender_function)
     assert coroutine_receiver in test_signal.receivers[key]

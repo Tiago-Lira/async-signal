@@ -10,7 +10,7 @@ setup(
     package_data={
         'async_signal': [],
     },
-    version='0.1',
+    version='0.1.1',
     description='Create signals to use with asyncio coroutines',
     author='Tiago Lira',
     author_email='tiagoliradsantos@gmail.com',

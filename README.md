@@ -70,6 +70,6 @@ def listen_multiply(sender, result):
     print(result)
 
 
-on_success.connect(sender=multiply_by_2, receiver=listen_multiply)
+was_multiplied.connect(sender=multiply_by_2, receiver=listen_multiply)
 
 ```
